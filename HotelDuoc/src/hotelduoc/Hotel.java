@@ -4,21 +4,20 @@
  */
 package hotelduoc;
 
-import java.util.ArrayList;
-
 /**
  *
  * @author Gabote
  */
 public class Hotel {
+
     private String idHotel;
     private String nombre;
-    private ArrayList<Habitacion> habitaciones;
+    //Lista de habitaciones
 
     public Hotel(String idHotel, String nombre) {
         this.idHotel = idHotel;
         this.nombre = nombre;
-        this.habitaciones = new ArrayList<>();
+        //Inicializar lista de habitaciones
     }
 
     public String getIdHotel() {
@@ -29,30 +28,23 @@ public class Hotel {
         return nombre;
     }
 
-    public ArrayList<Habitacion> getHabitaciones() {
-        return habitaciones;
-    }
-
+    //Getter de habitaciones
+    
     public void agregarHabitacion(Habitacion habitacion) {
-        habitaciones.add(habitacion);
+        //Agregar habitación
     }
 
     public void listarHabitacionesDisponibles() {
         System.out.println("Habitaciones disponibles en " + nombre + ":");
-        for (Habitacion h : habitaciones) {
-            if (h.isDisponible()) {
-                System.out.println("Número: " + h.getNumeroHabitacion() +
-                                   " - Precio: " + h.getPrecioNoche());
-            }
-        }
+
+        //Imprimir si están disponibles
+        //System.out.println("Número: " + h.getNumeroHabitacion()
+        //        + " - Precio: " + h.getPrecioNoche());
     }
 
     public Habitacion buscarHabitacion(String numero) {
-        for (Habitacion h : habitaciones) {
-            if (h.getNumeroHabitacion().equals(numero)) {
-                return h;
-            }
-        }
+        //Buscar y devolver habitación
         return null;
     }
+
 }
